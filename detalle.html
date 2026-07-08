@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de la Propiedad · Villas La Ribera</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-neutral-50 text-neutral-900 antialiased font-sans selection:bg-neutral-950 selection:text-white">
+
+  <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-xl border-b border-neutral-200/50 px-6 py-4 md:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+
+      <a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline text-current">
+        <div class="w-16 h-16 rounded-xl overflow-hidden border border-neutral-200/60 shadow-sm transition-transform duration-300 group-hover:rotate-6 shrink-0">
+          <img src="logo.png" alt="Villas La Ribera" class="w-full h-full object-cover" />
+        </div>
+        <div class="text-xl font-semibold tracking-tight text-neutral-950">
+          Villas La Ribera<span class="text-neutral-400">.</span>
+        </div>
+      </a>
+
+      <div class="text-[11px] font-medium tracking-widest uppercase text-neutral-400 bg-neutral-100 px-3 py-1.5 rounded-full border border-neutral-200/60">
+        Departamentos de Renta Vacacional
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-20">
+    <a class="inline-flex items-center space-x-2 text-sm font-medium text-neutral-500 hover:text-neutral-950 transition-colors duration-200 mb-8 group" href="index.html">
+      <span class="transform transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
+      <span>Volver al catálogo</span>
+    </a>
+
+    <div id="contenido-detalle">
+      </div>
+  </main>
+
+  <div class="fixed inset-0 bg-neutral-950/95 z-50 flex items-center justify-center backdrop-blur-md transition-opacity duration-300" id="lightbox" hidden>
+    <button class="absolute top-6 right-6 text-white/60 hover:text-white text-4xl font-light p-2 transition-colors cursor-pointer" id="lightbox-cerrar" type="button" aria-label="Cerrar">&times;</button>
+
+    <button class="absolute left-4 md:left-8 text-white/40 hover:text-white text-2xl p-4 transition-all bg-white/5 hover:bg-white/10 rounded-full cursor-pointer" id="lightbox-anterior" type="button" aria-label="Foto anterior">&#10229;</button>
+
+    <div class="max-w-[85vw] max-h-[80vh] flex items-center justify-center">
+      <img class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5" id="lightbox-img" src="" alt="" />
+    </div>
+
+    <button class="absolute right-4 md:right-8 text-white/40 hover:text-white text-2xl p-4 transition-all bg-white/5 hover:bg-white/10 rounded-full cursor-pointer" id="lightbox-siguiente" type="button" aria-label="Foto siguiente">&#10230;</button>
+
+    <p class="absolute bottom-6 text-xs tracking-widest text-white/50 font-medium uppercase bg-black/40 px-4 py-1.5 rounded-full border border-white/5" id="lightbox-contador"></p>
+  </div>
+
+  <footer class="border-t border-neutral-200/60 bg-white py-12 px-6 md:px-12 mt-20 text-sm text-neutral-400">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2 font-medium text-neutral-600">
+        <span>Estancias</span>
+        <span class="text-neutral-300">•</span>
+        <span class="font-light text-neutral-400">Villas La Ribera</span>
+      </div>
+      <div class="text-xs tracking-wide font-light">
+        © 2026 Catálogo de acceso libre · Sin intermediarios
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        navbar.classList.add('shadow-sm', 'py-3', 'bg-white/90');
+        navbar.classList.remove('py-4', 'bg-white/70');
+      } else {
+        navbar.classList.remove('shadow-sm', 'py-3', 'bg-white/90');
+        navbar.classList.add('py-4', 'bg-white/70');
+      }
+    });
+  </script>
+
+  
+<script type="module" src="js/data.js"></script>
+<script type="module" src="js/whatsapp.js"></script>
+<script type="module" src="js/detalle.js"></script>
+</body>
+</html>
