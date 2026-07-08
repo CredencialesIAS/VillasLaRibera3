@@ -2045,3 +2045,11 @@ input[type="date"]::-webkit-date-and-time-value {
     }
   }
 }
+/* Corrección para iOS - alinea y fija el ancho de los elementos */
+.caja-item {
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
