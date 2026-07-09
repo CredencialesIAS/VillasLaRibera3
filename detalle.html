@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detalle de la Propiedad · Villas La Ribera</title>
+  <title>Detalle de la Propiedad · Villas La Ribera 3</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,9 +11,20 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <div class="animar-scroll" style="transition-delay: 0s;">Título</div>
-<div class="animar-scroll" style="transition-delay: 0.2s;">Imagen 1</div>
-<div class="animar-scroll" style="transition-delay: 0.4s;">Imagen 2</div>
+  <!-- Estilos Premium de Scroll (Corregidos) -->
+  <style>
+    /* Estado inicial: más abajo, más pequeño e invisible */
+    .animar-scroll {
+        opacity: 0;
+        transform: translateY(100px) scale(0.95); 
+        transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Estado final: visible, en su posición original y tamaño real */
+    .animar-scroll.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
   </style>
 </head>
 <body class="bg-neutral-50 text-neutral-900 antialiased font-sans selection:bg-neutral-950 selection:text-white">
@@ -23,10 +34,10 @@
 
       <a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline text-current">
         <div class="w-16 h-16 rounded-xl overflow-hidden border border-neutral-200/60 shadow-sm transition-transform duration-300 group-hover:rotate-6 shrink-0">
-          <img src="logo.png" alt="Villas La Ribera" class="w-full h-full object-cover" />
+          <img src="logo.png" alt="Villas La Ribera 3" class="w-full h-full object-cover" />
         </div>
         <div class="text-xl font-semibold tracking-tight text-neutral-950">
-          Villas La Ribera<span class="text-neutral-400">.</span>
+          Villas La Ribera 3<span class="text-neutral-400">.</span>
         </div>
       </a>
 
@@ -42,8 +53,9 @@
       <span>Volver al catálogo</span>
     </a>
 
-    <div id="contenido-detalle" class="animar-scroll">
-      </div>
+    <!-- El contenedor del detalle queda limpio para que las amenidades se inyecten sin problemas -->
+    <div id="contenido-detalle">
+    </div>
   </main>
 
   <div class="fixed inset-0 bg-neutral-950/95 z-50 flex items-center justify-center backdrop-blur-md transition-opacity duration-300" id="lightbox" hidden>
@@ -86,6 +98,7 @@
     });
   </script>
 
+  <!-- Lógica de animación por Scroll -->
   <script>
     const elementosParaAnimar = document.querySelectorAll('.animar-scroll');
 

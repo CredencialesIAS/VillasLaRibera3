@@ -2073,23 +2073,4 @@ input[type="date"]::-webkit-date-and-time-value {
     transform: translateY(0) scale(1);
 }
 /* Botón flotante de WhatsApp */
-.btn-whatsapp-flotante {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 1000;
-    background-color: #25D366;
-    color: white;
-    padding: 14px 20px;
-    border-radius: 999px;
-    box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
 
