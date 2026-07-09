@@ -3,6 +3,7 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
+    
     --font-sans: 'Inter', ui-sans-serif, sans-serif;
     --font-serif: 'Fraunces', ui-serif, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -76,6 +77,10 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
+  /* En tu style.css, al principio de todo */
+html {
+    scroll-behavior: smooth;
+}
 }
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
@@ -2053,3 +2058,38 @@ input[type="date"]::-webkit-date-and-time-value {
     align-items: center;
     box-sizing: border-box;
 }
+/* Estado inicial: más abajo, más pequeño e invisible */
+.animar-scroll {
+    opacity: 0;
+    /* Aumentamos el desplazamiento a 100px y lo hacemos un 5% más pequeño */
+    transform: translateY(100px) scale(0.95); 
+    /* Aumentamos el tiempo a 1.2s y usamos una curva de animación más elegante */
+    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Estado final: visible, en su posición original y tamaño real */
+.animar-scroll.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+/* Botón flotante de WhatsApp */
+.btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    background-color: #25D366;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 999px;
+    box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
